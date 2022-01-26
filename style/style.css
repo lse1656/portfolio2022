@@ -1,5 +1,6 @@
 :root {
   --background-color: #d3d3d3;
+  --border-color: #515151;
 }
 
 .wrap {
@@ -47,25 +48,72 @@
 }
 
 /* project */
+.project .project-wrapper {
+  padding: 0 60px;
+}
 .project .section-title {
   margin-bottom: 60px;
 }
-.project .project-item a {
-  display: block;
-}
-.project .rotate-box .box {
+.project .project-item {
   position: relative;
 }
-.project .rotate-box em {
+.project .project-item::after {
   position: absolute;
   left: 0;
-  top: 8px;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  content: '';
+}
+.project .project-item a {
+  display: block;
+  padding: 60px 0;
+  width: 100%;
+  height: 170px;
+  transform-style: preserve-3d;
+  box-sizing: content-box;
+}
+.project .project-item a:hover .rotate-box {
+  transform: rotateX(90deg);
+}
+.project .rotate-box {
+  position: relative;
+  width: 540px;
+  height: 170px;
+  transition: transform 500ms;
+  transform-style: preserve-3d;
+  transform: translateZ(-85px);
+}
+.project .rotate-box .front {
+  height: 170px;
+  transform: rotateX(0) translateZ(85px);
+}
+.project .rotate-box .bottom {
+  height: 170px;
+  padding: 40px 0;
+  transform: rotateX(-90deg) translateZ(85px);
+}
+.project .rotate-box .box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .project .rotate-box h3 {
   padding-left: 35px;
   line-height: 5.2rem;
   font-size: 92px;
   font-weight: 300;
+}
+.project .rotate-box .front em {
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+.project .rotate-box .bottom em {
+  position: absolute;
+  left: 0;
+  top: 48px;
 }
 .project .rotate-box .bottom .project-infor {
   display: inline-block;
@@ -92,4 +140,10 @@
   background: url('../images/line.svg') no-repeat center;
   background-size: contain;
   content: '';
+}
+.project .project-item:last-child .front {
+  padding: 40px 0;
+}
+.project .project-item:last-child .front em {
+  top: 48px;
 }
