@@ -30,7 +30,7 @@
 
 /* cursor */
 .cursor {
-  position: absolute;
+  position: fixed;
   z-index: 500;
   transition: transform 300ms linear;
 }
@@ -43,7 +43,7 @@
   transition: transform 500ms ease-in-out;
 }
 .cursor-body.shrink {
-  transform: scale(0.5);
+  transform: scale(0.4);
 }
 .cursor-img {
   /* width: 290px;

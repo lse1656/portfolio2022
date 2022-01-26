@@ -5,8 +5,8 @@ const link = document.querySelectorAll('a');
 const cursorWidth = 30;
 
 function movingCursor(e) {
-  cursor.style.transform = `translate3D(${e.pageX - cursorWidth / 2}px,${
-    e.pageY - cursorWidth / 2
+  cursor.style.transform = `translate3D(${e.clientX - cursorWidth / 2}px,${
+    e.clientY - cursorWidth / 2
   }px,0)`;
 }
 
@@ -19,6 +19,7 @@ function growCurosr() {
 }
 
 window.addEventListener('mousemove', movingCursor);
+window.addEventListener('scroll', movingCursor);
 link.forEach((element) => {
   element.addEventListener('mouseover', shrinkCursor);
 });
