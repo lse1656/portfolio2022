@@ -1,6 +1,7 @@
 :root {
   --background-color: #d3d3d3;
   --border-color: #515151;
+  --cursor-color: #00ac7c;
 }
 
 .wrap {
@@ -11,6 +12,53 @@
 .inner {
   width: 1280px;
   margin: 0 auto;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cursor-color);
+  border-radius: 5px;
+}
+
+/* cursor */
+.cursor {
+  position: absolute;
+  z-index: 500;
+  transition: transform 300ms linear;
+}
+.cursor-body {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  opacity: 0.8;
+  background-color: var(--cursor-color);
+  transition: transform 500ms ease-in-out;
+}
+.cursor-body.shrink {
+  transform: scale(0.5);
+}
+.cursor-img {
+  /* width: 290px;
+  height: 400px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-140px, -205px);
+  transition: opacity 500ms ease-in-out, visibility 500ms ease-in-out;
+  background: url(../images/project01.jpg) no-repeat center;
+  background-size: contain;
+  pointer-events: none; */
+}
+.cursor-img.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* section-title */
