@@ -28,20 +28,40 @@ link.forEach((element) => {
 });
 
 // project cursor
-// const cursorImg = document.querySelector('.cursor-img');
-// const projectItem = document.querySelectorAll('.project-item a');
+const cursorImg = document.querySelectorAll('.cursor-img');
+const projectItem = document.querySelectorAll('.project-item');
+const projectList = document.querySelector('.project-list');
+let currElem;
 
-// function showImg() {
-//   cursorImg.classList.add('show');
-// }
+function setData() {
+  projectItem.forEach((element, i) => {
+    element.setAttribute('data-index', i);
+  });
+  cursorImg.forEach((element, i) => {
+    element.setAttribute('data-index', i);
+  });
+}
+setData(); //data-index 부여
 
-// function hideImg() {
-//   cursorImg.classList.remove('show');
-// }
+function showImg(e) {
+  let currentIndex = this.getAttribute('data-index');
+  cursorImg.forEach((element, i) => {
+    let imgIndex = element.getAttribute('data-index');
+    if (imgIndex == currentIndex) {
+      element.classList.add('show');
+    } else {
+      element.classList.remove('show');
+    }
+  });
+}
 
-// projectItem.forEach((element) => {
-//   element.addEventListener('mouseover', showImg);
-// });
-// projectItem.forEach((element) => {
-//   element.addEventListener('mouseleave', hideImg);
-// });
+function hideImg() {
+  cursorImg.forEach((element) => {
+    element.classList.remove('show');
+  });
+}
+
+projectItem.forEach((element) => {
+  element.addEventListener('mouseover', showImg);
+  element.addEventListener('mouseleave', hideImg);
+});
