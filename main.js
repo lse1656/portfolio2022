@@ -65,3 +65,19 @@ projectItem.forEach((element) => {
   element.addEventListener('mouseover', showImg);
   element.addEventListener('mouseleave', hideImg);
 });
+
+//header scroll event
+const header = document.querySelector('.header');
+const visualImg = document.querySelector('.visual-banner img');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 80) {
+    header.classList.add('active');
+    visualImg.style.opacity = '0.6';
+    visualImg.style.transform = 'translateY(-5vw)';
+  } else {
+    header.classList.remove('active');
+    visualImg.style.opacity = '1';
+    visualImg.style.transform = 'translateY(0)';
+  }
+});
