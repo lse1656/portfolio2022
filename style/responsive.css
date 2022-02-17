@@ -1,0 +1,51 @@
+@media screen and (min-width: 2480px) {
+  .inner {
+    padding: 0;
+    margin: 0 auto;
+    width: 2440px;
+  }
+
+  .cursor-img {
+    top: -322px;
+    left: -224px;
+    width: 526px;
+    height: 726px;
+  }
+
+  .header .main-logo {
+    font-size: 58px;
+  }
+  .header p {
+    font-size: 198.4px;
+  }
+  .header p span:nth-child(2)::before {
+    height: 27.2px;
+  }
+
+  .visual-banner {
+    padding-top: 595px;
+  }
+  .visual-banner p {
+    font-size: 43.4px;
+  }
+
+  .project .project-item::after {
+    height: 2px;
+  }
+  .project .project-item a {
+    padding: 108px 0;
+    height: 308px;
+  }
+  .project .rotate-box .box h3 {
+    font-size: 174px;
+  }
+  .project .rotate-box {
+    height: 308px;
+  }
+  .project .rotate-box .box em {
+    font-size: 29px;
+  }
+  .project .rotate-box .bottom .detail-list {
+    font-size: 29px;
+  }
+}
