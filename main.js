@@ -2,6 +2,7 @@
 const cursor = document.querySelector('.cursor');
 const cursorBody = document.querySelector('.cursor-body');
 const link = document.querySelectorAll('a');
+const button = document.querySelectorAll('button');
 const cursorWidth = 30;
 
 function movingCursor(e) {
@@ -22,8 +23,10 @@ window.addEventListener('mousemove', movingCursor);
 window.addEventListener('scroll', movingCursor);
 link.forEach((element) => {
   element.addEventListener('mouseover', shrinkCursor);
+  element.addEventListener('mouseleave', growCurosr);
 });
-link.forEach((element) => {
+button.forEach((element) => {
+  element.addEventListener('mouseover', shrinkCursor);
   element.addEventListener('mouseleave', growCurosr);
 });
 
@@ -68,16 +71,16 @@ projectItem.forEach((element) => {
 
 //header scroll event
 const header = document.querySelector('.header');
-const visualImg = document.querySelector('.visual-banner img');
+//const visualImg = document.querySelector('.visual-banner img');
 
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 80) {
     header.classList.add('active');
-    visualImg.style.opacity = '0.6';
-    visualImg.style.transform = 'translateY(-5vw)';
+    //visualImg.style.opacity = '0.6';
+    //visualImg.style.transform = 'translateY(-5vw)';
   } else {
     header.classList.remove('active');
-    visualImg.style.opacity = '1';
-    visualImg.style.transform = 'translateY(0)';
+    //visualImg.style.opacity = '1';
+    //visualImg.style.transform = 'translateY(0)';
   }
 });

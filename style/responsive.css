@@ -5,6 +5,7 @@
     width: 2440px;
   }
 
+  /* cursor */
   .cursor-img {
     top: -322px;
     left: -224px;
@@ -12,6 +13,12 @@
     height: 726px;
   }
 
+  /* section-title */
+  .section-title {
+    font-size: 29px;
+  }
+
+  /* header */
   .header .main-logo {
     font-size: 58px;
   }
@@ -21,7 +28,11 @@
   .header p span:nth-child(2)::before {
     height: 27.2px;
   }
+  .header .link {
+    width: 50px;
+  }
 
+  /* visual-banner */
   .visual-banner {
     padding-top: 595px;
   }
@@ -29,8 +40,9 @@
     font-size: 43.4px;
   }
 
-  .project .project-item::after {
-    height: 2px;
+  /* project */
+  .project {
+    padding-top: 670px;
   }
   .project .project-item a {
     padding: 108px 0;
@@ -46,6 +58,11 @@
     font-size: 29px;
   }
   .project .rotate-box .bottom .detail-list {
+    padding-left: 81px;
     font-size: 29px;
+  }
+  .project .rotate-box .bottom .detail-list::before {
+    width: 50px;
+    height: 120px;
   }
 }
