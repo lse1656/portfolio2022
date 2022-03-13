@@ -6,9 +6,7 @@ const button = document.querySelectorAll('button');
 const cursorWidth = 30;
 
 function movingCursor(e) {
-  cursor.style.transform = `translate3D(${e.clientX - cursorWidth / 2}px,${
-    e.clientY - cursorWidth / 2
-  }px,0)`;
+  cursor.style.transform = `translate3D(${e.clientX}px,${e.clientY}px,0)`;
 }
 
 function shrinkCursor() {
@@ -69,18 +67,37 @@ projectItem.forEach((element) => {
   element.addEventListener('mouseleave', hideImg);
 });
 
-//header scroll event
-const header = document.querySelector('.header');
-//const visualImg = document.querySelector('.visual-banner img');
+//scroll effect
+const underline = document.querySelectorAll('.underline');
+const tit = document.querySelectorAll('.section-title h2');
+const titPara = document.querySelector('.section-title p');
+const projectItemLink = document.querySelectorAll('.project-item a');
+
+const elements = [titPara];
+
+tit.forEach((elem) => {
+  elements.push(elem);
+});
+
+projectItemLink.forEach((elem) => {
+  elements.push(elem);
+});
 
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 80) {
-    header.classList.add('active');
-    //visualImg.style.opacity = '0.6';
-    //visualImg.style.transform = 'translateY(-5vw)';
-  } else {
-    header.classList.remove('active');
-    //visualImg.style.opacity = '1';
-    //visualImg.style.transform = 'translateY(0)';
-  }
+  const getBoundingElem = elements.map((elem) => {
+    return elem.getBoundingClientRect().top;
+  }); //element의 위치값 가져오기
+
+  getBoundingElem.forEach((a, i) => {
+    if (getBoundingElem[i] < window.innerHeight * 0.9) {
+      elements[i].id = 'fadeIn';
+    }
+  }); //조건 달성시 fadeIn id 추가
+
+  underline.forEach((underline) => {
+    let underlineY = underline.getBoundingClientRect().top;
+    if (underlineY < window.innerHeight * 0.95) {
+      underline.classList.add('show');
+    }
+  });
 });
