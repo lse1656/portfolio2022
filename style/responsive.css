@@ -1,1 +1,99 @@
+@media screen and (max-width: 980px) {
+  /* cursor */
+  .cursor {
+    display: none;
+  }
 
+  /* inner */
+  .inner {
+    padding: 0 40px;
+  }
+
+  /* section-title */
+  .section-title h2 {
+    font-size: 15px;
+  }
+  .section-title p {
+    font-size: 14px;
+  }
+  .section-title .underline::after {
+    height: 1px;
+  }
+
+  /* header */
+  .header .header-wrapper {
+    padding-top: 20px;
+  }
+  .header .main-logo {
+    font-size: 15px;
+  }
+  .header .main-logo a {
+    line-height: 3em;
+  }
+
+  /* skill */
+  .skill .skill-wrapper {
+    padding: 80px 0;
+  }
+  .skill .skill-group {
+    width: 100%;
+  }
+  .skill .skill-group h3 {
+    font-size: 15px;
+  }
+  .skill .skill-group .skill-item {
+    width: 100%;
+  }
+  .skill .skill-group .skill-item h4 {
+    font-size: 16px;
+  }
+  .skill .skill-group .skill-item p {
+    font-size: 14px;
+  }
+  .skill .skill-group .skill-item:nth-child(odd) {
+    border-right: 0;
+  }
+
+  /* project */
+  .project .project-wrapper {
+    padding: 0;
+  }
+  .project .project-item::after {
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .inner {
+    padding: 0 20px;
+  }
+
+  .section-title {
+    padding: 30px 0;
+  }
+
+  .skill .parallax {
+    margin-left: -40%;
+    font-size: 9vw;
+  }
+
+  .project .project-item a {
+    padding: 7vw 0 2vw;
+    height: 22vw;
+  }
+  .project .rotate-box {
+    height: 22vw;
+    transform: none;
+  }
+  .project .rotate-box .box h3 {
+    padding-left: 0;
+    text-align: center;
+    font-size: 10vw;
+  }
+  .project .rotate-box .front em {
+    display: none;
+  }
+  .project .rotate-box .bottom {
+    display: none;
+  }
+}

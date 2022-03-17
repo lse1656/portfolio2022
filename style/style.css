@@ -198,7 +198,7 @@
   background-color: var(--background-color);
 }
 .skill .parallax {
-  padding: 4vw 0;
+  padding: 0.65em 0;
   line-height: 1.1;
   font-size: 6vw;
   text-transform: uppercase;
