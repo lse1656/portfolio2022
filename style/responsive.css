@@ -72,13 +72,23 @@
     padding: 30px 0;
   }
 
-  .skill .parallax {
-    margin-left: -40%;
-    font-size: 9vw;
+  .header .gnb {
+    display: none;
   }
 
+  .skill .parallax {
+    margin-left: -40%;
+    font-size: 10vw;
+  }
+  .skill .skill-group .skill-item {
+    padding: 7vw 0;
+  }
+
+  .project .project-wrapper {
+    padding-bottom: 12vw;
+  }
   .project .project-item a {
-    padding: 7vw 0 2vw;
+    padding: 7vw 0 6vw;
     height: 22vw;
   }
   .project .rotate-box {
@@ -88,7 +98,7 @@
   .project .rotate-box .box h3 {
     padding-left: 0;
     text-align: center;
-    font-size: 10vw;
+    font-size: 12vw;
   }
   .project .rotate-box .front em {
     display: none;

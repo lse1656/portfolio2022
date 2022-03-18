@@ -20,7 +20,7 @@
 
 /* inner */
 .inner {
-  padding: 0 2vw;
+  padding: 0 3vw;
 }
 
 /* scrollbar */
@@ -161,9 +161,10 @@
   width: 100%;
 }
 .header .header-wrapper {
+  padding-top: 3vw;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .header .main-logo {
   font-size: 1.1vw;
@@ -171,13 +172,29 @@
 }
 .header .main-logo a {
   display: block;
-  line-height: 5vw;
 }
 .header .main-logo.light a {
   color: var(--background-color);
 }
-.header .link {
-  width: 2vw;
+.header .gnb a {
+  display: inline-block;
+  position: relative;
+  font-size: 1.1vw;
+  overflow: hidden;
+}
+.header .gnb a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.08vw;
+  background: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+.header .gnb a:hover::after {
+  transform: translateX(0);
 }
 
 /* visual */
@@ -347,17 +364,64 @@
 }
 
 /* footer */
-.footer {
+.about {
   color: var(--background-color);
   background-color: var(--font-base);
 }
-.footer .footer-wrapper {
-  padding: 10vw 0;
+.about .banner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  line-height: 1.1;
+  font-size: 5.5vw;
+  font-family: 'Noto Serif Display', serif;
+  font-weight: 300;
+  white-space: nowrap;
 }
-.footer .section-title .underline:first-child::after {
+.about .infinite-banner {
+  padding: 4vw 0 12vw;
+  overflow: hidden;
+}
+.about .infinite-banner p {
+  line-height: 1.1;
+  font-size: 6vw;
+  font-family: 'Noto Serif Display', serif;
+  font-weight: 300;
+  white-space: nowrap;
+}
+.about .infinite-banner p:last-child {
+  transform: translateX(-100%);
+  animation: to-right 21s infinite linear alternate;
+}
+@keyframes to-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes to-right {
+  to {
+    transform: translateX(0);
+  }
+}
+.about .about-wrapper {
+  padding-bottom: 10vw;
+}
+.about .section-title .underline:first-child::after {
   top: 0;
   bottom: initial;
 }
-.footer .section-title .underline::after {
+.about .section-title .underline::after {
   background-color: var(--background-color);
+}
+
+/* footer */
+.footer {
+  height: 100vh;
+  color: var(--background-color);
+  background-color: var(--font-base);
 }
