@@ -96,7 +96,7 @@ const parallax = document.querySelector('.parallax');
 
 window.addEventListener('scroll', () => {
   let scrollY = window.scrollY;
-  parallax.style.transform = `translateX(${scrollY / 4}px)`;
+  parallax.style.transform = `translateX(${scrollY / 3}px)`;
 });
 
 //main-logo, cursor 색 변경
@@ -121,9 +121,12 @@ window.addEventListener('resize', () => {
 }); //화면 창 크기 변경시 값 변경
 
 window.addEventListener('scroll', () => {
-  let pageY = window.pageYOffset + logoHeight;
+  let pageY = window.pageYOffset + logoHeight + 20;
 
-  if (pageY > skillY && pageY < skillY + skillHeight) {
+  if (
+    (pageY > skillY && pageY < skillY + skillHeight) ||
+    (pageY > footerY && pageY < footerY + footerHeight)
+  ) {
     mainLogo.classList.add('light');
   } else {
     mainLogo.classList.remove('light');
